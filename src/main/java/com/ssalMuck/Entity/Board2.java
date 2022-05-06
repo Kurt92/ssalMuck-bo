@@ -11,8 +11,9 @@ import javax.persistence.Id;
 @Getter @Setter
 public class Board2 {
     @Id @GeneratedValue
-    private Long id;
+    private int id;
     private String title;
     private String username;
     private String createDT;
+
 }

@@ -12,12 +12,13 @@ public class Board2Repository {
     @PersistenceContext
     private EntityManager em;
 
-    public Long save(Board2 b2){
+    public int save(Board2 b2){
         em.persist(b2);
+        em.flush();
         return b2.getId();
     }
 
-    public Board2 findBoard(Long id){
+    public Board2 findBoard(int id){
         return em.find(Board2.class, id);
     }
 

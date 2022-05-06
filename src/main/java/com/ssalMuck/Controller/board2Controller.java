@@ -3,11 +3,16 @@ package com.ssalMuck.Controller;
 import com.ssalMuck.Entity.Board2;
 import com.ssalMuck.Repository.Board2Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -16,8 +21,8 @@ public class board2Controller {
 
     @Transactional
     @GetMapping("/board2")
-    public String board2 (Model model){
-
+    //public Map<String,Object> board2 (Model model){
+    public ResponseEntity board2 (Model model){
         System.out.println("board2+++++++++++++++");
         Board2 b2 = new Board2();
         b2.setTitle("aaaaaaaa");
@@ -27,12 +32,14 @@ public class board2Controller {
 
 
 
-        Long saveId = board2Repository.save(b2);
+        int saveId = board2Repository.save(b2);
         System.out.println("=====================");
+        Map<String,Object> resultMap = new HashMap<String,Object>();
+
         Board2 findBoard = board2Repository.findBoard(saveId);
+        resultMap.put("list",findBoard);
+        System.out.println("???????????????? : "+resultMap);
 
-        System.out.println(findBoard);
-
-        return "/board2";
+        return new ResponseEntity(resultMap, HttpStatus.OK);
     }
 }
