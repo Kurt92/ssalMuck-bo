@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +39,12 @@ public class board2Controller {
 
         Board2 findBoard = board2Repository.findBoard(saveId);
         resultMap.put("list",findBoard);
-        System.out.println("???????????????? : "+resultMap);
+        System.out.println(resultMap);
+
+        resultMap.forEach((key,value)->{
+            System.out.println(key+ " : " + value);
+        });
+
 
         return new ResponseEntity(resultMap, HttpStatus.OK);
     }
