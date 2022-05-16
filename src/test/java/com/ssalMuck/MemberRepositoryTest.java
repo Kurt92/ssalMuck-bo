@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 
 public class MemberRepositoryTest {
 
-    @Autowired MemberRepository memberRepository;
+   /* @Autowired MemberRepository memberRepository;
 
     @Test
     @Transactional
@@ -33,7 +33,7 @@ public class MemberRepositoryTest {
         //then
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
         Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-        /*Assertions.assertThat(findMember).isEqualTo(member);
-        System.out.println("============" + findMember);*/
-    }
+        *//*Assertions.assertThat(findMember).isEqualTo(member);
+        System.out.println("============" + findMember);*//*
+    }*/
 }
