@@ -24,5 +24,17 @@ public class OrderRepository {
     //검색
     /*public List<Order> findAll(OrderSearch orderSearch){
 
+        QOrder order = QOrder.order;
+        QMember member = QMemeber.member;
+
+        return query
+                .select(order)
+                .from(order)
+                .join(order.memberm, member)
+                .where(statusEq(orderSearch.getOrderStatus()),
+                        nameLike(orderSearch, getMemberName()))
+                .limit(1000)
+                .fetch();
+
     }*/
 }

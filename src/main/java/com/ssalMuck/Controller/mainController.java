@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class mainController {
 
-    @GetMapping("/")
+    @GetMapping("/main")
     public String hello(Model model){
         model.addAttribute("data", "hello");
         System.out.println("model = " + model);
-        return "/";
+        return "/main";
     }
 
 }
