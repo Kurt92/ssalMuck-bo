@@ -41,8 +41,9 @@ public class board2Controller {
         Map<String,Object> resultMap = new HashMap<String,Object>();
 
 
-        Board2 findBoard = board2Repository.findBoard(saveId);
-        resultMap.put("list",findBoard);
+        /*Board2 findBoard = board2Repository.findBoard(saveId);*/
+        List findAll = board2Repository.findAll();
+        resultMap.put("list",findAll);
         System.out.println(resultMap);
 
         resultMap.forEach((key,value)->{

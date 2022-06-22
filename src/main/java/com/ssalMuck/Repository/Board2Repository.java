@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Repository
 public class Board2Repository {
@@ -20,6 +21,12 @@ public class Board2Repository {
 
     public Board2 findBoard(int id){
         return em.find(Board2.class, id);
+    }
+    public List<Board2> findAll(){
+        return em.createQuery("select b from Board2 b", Board2.class)
+                .setFirstResult(1) // 페이징
+                .setMaxResults(10) // 페이징
+                .getResultList(); // 리스트 가져오는법
     }
 
 }
