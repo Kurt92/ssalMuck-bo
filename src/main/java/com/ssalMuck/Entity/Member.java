@@ -1,5 +1,8 @@
 package com.ssalMuck.Entity;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,10 +14,15 @@ import java.util.List;
 @Getter @Setter
 public class Member {
 
-    @Id @GeneratedValue
-    @Column(name = "member_id")
-    private Long id;
+    @Id
+    @Column(name = "user_id")
+    @ApiParam(value = "회원 아이디", required = true, example = "chcch123")
+    private String id;
 
+    //@ApiParam(value = "회원 비밀번호", required = true)
+    private String password;
+
+    //@ApiParam(value = "회원 이름")
     private String name;
 
     @Embedded

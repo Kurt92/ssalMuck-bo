@@ -1,27 +1,21 @@
-package com.ssalMuck;
+package com.ssalMuck.Repository;
 
 import com.ssalMuck.Entity.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Repository
-public class MemberRepository {
+@Slf4j
+public class LoginRepository {
 
     @PersistenceContext
     private EntityManager em;
 
-    /*public Long save(Member member){
-        em.persist(member);
-        return member.getId();
-    }*/
-
-    public Member save(String id) {
-        return null;
-    }
-
     public Member find(String id) {
+        log.info("Repository Param check : " + id);
         return em.find(Member.class, id);
     }
 }

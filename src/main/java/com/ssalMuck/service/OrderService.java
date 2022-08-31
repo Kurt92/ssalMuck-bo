@@ -6,7 +6,8 @@ import com.ssalMuck.Entity.Member;
 import com.ssalMuck.Entity.Order;
 import com.ssalMuck.Entity.OrderItem;
 import com.ssalMuck.Repository.ItemRepository;
-import com.ssalMuck.Repository.MemberRepository;
+import com.ssalMuck.MemberRepository;
+/*import com.ssalMuck.Repository.MemberRepository;*/
 import com.ssalMuck.Repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,8 +28,8 @@ public class OrderService {
      * 주문
      */
     @Transactional
-    public Long order(Long memberId, Long itemId, int count) {
-
+    public Long order(String memberId, Long itemId, int count) {
+/*
         //엔티티 조회
         Member member = memberRepository.findOne(memberId);
         Item item = itemRepository.findOne(itemId);
@@ -46,7 +47,8 @@ public class OrderService {
         //주문 저장
         orderRepository.save(order);
 
-        return order.getId();
+        return order.getId();*/
+        return null;
     }
 
     /**

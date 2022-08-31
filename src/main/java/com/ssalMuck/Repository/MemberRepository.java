@@ -1,3 +1,4 @@
+/*
 package com.ssalMuck.Repository;
 
 import com.ssalMuck.Entity.Member;
@@ -15,8 +16,10 @@ import java.util.List;
 public class MemberRepository {
 
     //@PersistenceContext = 스프링이 엔티티 매니저를 주입해줌
-    /*@PersistenceContext
-    private EntityManager em;*/
+    */
+/*@PersistenceContext
+    private EntityManager em;*//*
+
 
     //@RequiredArgsConstructor  => spring data jpa가 autoWired를 지원해줌
     private final EntityManager em;
@@ -25,7 +28,7 @@ public class MemberRepository {
         em.persist(member);
     }
 
-    public Member findOne(Long id) {
+    public Member findOne(String id) {
         return em.find(Member.class, id);
     }
 
@@ -41,3 +44,4 @@ public class MemberRepository {
                 .getResultList();
     }
 }
+*/
