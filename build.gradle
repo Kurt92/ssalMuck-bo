@@ -33,7 +33,8 @@ dependencies {
 
 	//swagger
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
-
+	//model mapper
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
 }
 
 tasks.named('test') {

@@ -1,5 +1,6 @@
 package com.ssalMuck.Repository;
 
+import com.ssalMuck.Dto.MemberDTO;
 import com.ssalMuck.Entity.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

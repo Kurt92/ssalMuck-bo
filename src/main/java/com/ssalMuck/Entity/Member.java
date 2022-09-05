@@ -3,6 +3,7 @@ package com.ssalMuck.Entity;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jdk.nashorn.internal.runtime.Debug;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,5 +31,6 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
 
 }

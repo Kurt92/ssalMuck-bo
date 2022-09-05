@@ -20,8 +20,10 @@ public class LoginService {
     public Member login(MemberDTO memberDto){
         log.info("service param id : " + memberDto.getId());
         log.info("service param pass : " + memberDto.getPassword());
+        //DTO > 엔티티
+        Member saveMember = memberDto.toEntity();
 
 
-        return loginRepository.find(memberDto.getId());
+        return Member member = loginRepository.find(saveMember.getId());
     }
 }
