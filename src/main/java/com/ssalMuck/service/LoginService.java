@@ -5,7 +5,6 @@ import com.ssalMuck.Entity.Member;
 import com.ssalMuck.Repository.LoginRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,13 +16,20 @@ public class LoginService {
 
     private final LoginRepository loginRepository;
 
-    public Member login(MemberDTO memberDto){
-        log.info("service param id : " + memberDto.getId());
-        log.info("service param pass : " + memberDto.getPassword());
+    public MemberDTO login(MemberDTO memberDTO){
+
+        //DTO > 엔티티   => ropository 로 옮겼음
+        /*Member member = Member.builder(memberDTO).build();*/
+
         //DTO > 엔티티
-        Member saveMember = memberDto.toEntity();
+        Member member = memberDTO.toEntity();
+        member = loginRepository.find(member);
+        //dps
+        memberDTO = memberDTO.toDto(member);
 
 
-        return Member member = loginRepository.find(saveMember.getId());
+        return memberDTO;
     }
+
+
 }

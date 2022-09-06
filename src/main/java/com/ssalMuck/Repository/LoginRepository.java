@@ -15,8 +15,7 @@ public class LoginRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public Member find(String id) {
-        log.info("Repository Param check : " + id);
-        return em.find(Member.class, id);
+    public Member find(Member member) {
+        return em.find(Member.class, member.getId());
     }
 }

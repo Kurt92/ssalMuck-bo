@@ -2,31 +2,19 @@ package com.ssalMuck.Controller;
 
 import com.ssalMuck.Dto.MemberDTO;
 import com.ssalMuck.Entity.Member;
-import com.ssalMuck.MemberRepository;
 import com.ssalMuck.service.LoginService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-/*import kr.dogfoot.hwplib.object.HWPFile;
-import kr.dogfoot.hwplib.object.bodytext.Section;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.Paragraph;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPChar;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharNormal;
-import kr.dogfoot.hwplib.object.bodytext.paragraph.text.HWPCharType;
-import kr.dogfoot.hwplib.reader.HWPReader;
-import kr.dogfoot.hwplib.tool.objectfinder.FieldFinder;
-import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod;*/
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -39,22 +27,22 @@ public class loginController {
 
 
     @ApiOperation(value="로그인", notes="유저를 조회한다")
+
     @Transactional
     @GetMapping("/login.do")
-    public ResponseEntity login(@RequestParam("id") String id, @ModelAttribute MemberDTO memberDto, Member member, Model model, HttpSession session){
-
-        log.info("login.do 호출");
-        log.info("param check EN: " + id);
-        log.info("param check VO: " + memberDto.getId());
+    public ResponseEntity login(@ModelAttribute MemberDTO memberDto, HttpSession session){
 
 
-        member = loginService.login(memberDto);
-        log.info("DTO result : " + memberDto.getPassword());
-        session.setAttribute("id",member.getId());
-        session.setAttribute("name",member.getName());
-        log.info("select result : " + session.getId());
+
+        memberDto = loginService.login(memberDto);
+
+
+        session.setAttribute("id",memberDto.getId());
+        session.setAttribute("name",memberDto.getName());
+
+
         Map<String,Object> resultMap = new HashMap<String,Object>();
-        resultMap.put("list",memberDto);
+        resultMap.put("list", memberDto);
         return new ResponseEntity<>(resultMap, HttpStatus.OK);
     }
 
