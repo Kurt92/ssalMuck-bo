@@ -1,6 +1,5 @@
 package com.ssalMuck.Repository;
 
-import com.ssalMuck.Dto.MemberDTO;
 import com.ssalMuck.Entity.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -17,5 +16,11 @@ public class LoginRepository {
 
     public Member find(Member member) {
         return em.find(Member.class, member.getId());
+    }
+
+    public void save(Member member) {
+        log.info("aaa"+member);
+        em.persist(member);
+        em.flush();
     }
 }

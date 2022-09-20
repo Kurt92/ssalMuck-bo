@@ -1,5 +1,4 @@
-/*
-package com.ssalMuck.Repository;
+/*package com.ssalMuck.Repository;
 
 import com.ssalMuck.Entity.Member;
 import lombok.RequiredArgsConstructor;
@@ -16,9 +15,8 @@ import java.util.List;
 public class MemberRepository {
 
     //@PersistenceContext = 스프링이 엔티티 매니저를 주입해줌
-    */
-/*@PersistenceContext
-    private EntityManager em;*//*
+@PersistenceContext
+    private EntityManager em;
 
 
     //@RequiredArgsConstructor  => spring data jpa가 autoWired를 지원해줌
@@ -26,9 +24,9 @@ public class MemberRepository {
 
     public void save(Member member) {
         em.persist(member);
-    }
+    }*/
 
-    public Member findOne(String id) {
+   /* public Member findOne(String id) {
         return em.find(Member.class, id);
     }
 
@@ -43,5 +41,5 @@ public class MemberRepository {
                 .setParameter("name",name)
                 .getResultList();
     }
-}
 */
+        /*}*/

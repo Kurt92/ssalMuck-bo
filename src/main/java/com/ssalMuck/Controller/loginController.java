@@ -1,17 +1,13 @@
 package com.ssalMuck.Controller;
 
 import com.ssalMuck.Dto.MemberDTO;
-import com.ssalMuck.Entity.Member;
 import com.ssalMuck.service.LoginService;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -27,7 +23,6 @@ public class loginController {
 
 
     @ApiOperation(value="로그인", notes="유저를 조회한다")
-
     @Transactional
     @GetMapping("/login.do")
     public ResponseEntity login(@ModelAttribute MemberDTO memberDto, HttpSession session){
@@ -49,12 +44,16 @@ public class loginController {
     @GetMapping("/logout.do")
     public ResponseEntity logout(HttpSession session){
         log.info("session check : "+session.getId());
+        //세션에 들어있는 값 제거
         session.invalidate();
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    public ResponseEntity signin() {
-        return null;
+    @ApiOperation(value="회원가입", notes="신규 회원가입")
+    @PostMapping("/signin")
+    public ResponseEntity signin(@ModelAttribute MemberDTO memberDTO) {
+        loginService.signin(memberDTO);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

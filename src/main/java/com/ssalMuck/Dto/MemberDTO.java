@@ -32,11 +32,11 @@ public class MemberDTO {
     /*@Builder(builderMethodName = "MemberBuilder")
     public MemberDTO (String id){
         this.id=id;
-
-
     }*/
-
-    public Member toEntity(){
+    //Builder 방식
+    //갹체지향 : 하나의 클래스에는 하니의 역할(책임)만 들어가야 한다.
+    //           => 변환역할은 독립적인 클래스로 작성하는게 바람직함
+    /*public Member toEntity(){
         Member member = new Member();
         member.setId(this.id);
         member.setPassword(this.password);
@@ -47,6 +47,6 @@ public class MemberDTO {
                 .id(member.getId())
                 .name(member.getName())
                 .build();
-    }
+    }*/
 
 }
