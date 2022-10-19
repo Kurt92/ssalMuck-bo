@@ -35,6 +35,7 @@ public class board2Controller {
     public ResponseEntity insert (@ModelAttribute Board2DTO board2DTO){
 
 
+
         board2Service.insert(board2DTO);
 
 

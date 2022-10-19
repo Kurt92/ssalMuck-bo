@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-09-20T18:51:47+0900",
+    date = "2022-09-26T18:52:09+0900",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_292 (AdoptOpenJDK)"
 )
 @Component
@@ -24,11 +24,9 @@ public class Board2MapperImpl implements Board2Mapper {
 
         Board2DTOBuilder board2DTO = Board2DTO.builder();
 
-        board2DTO.id( e.getId() );
         board2DTO.title( e.getTitle() );
         board2DTO.username( e.getUsername() );
         board2DTO.createDT( e.getCreateDT() );
-        board2DTO.asd( e.getAsd() );
 
         return board2DTO.build();
     }
@@ -41,11 +39,9 @@ public class Board2MapperImpl implements Board2Mapper {
 
         Board2 board2 = new Board2();
 
-        board2.setId( d.getId() );
         board2.setTitle( d.getTitle() );
         board2.setUsername( d.getUsername() );
         board2.setCreateDT( d.getCreateDT() );
-        board2.setAsd( d.getAsd() );
 
         return board2;
     }
@@ -84,7 +80,6 @@ public class Board2MapperImpl implements Board2Mapper {
             return;
         }
 
-        entity.setId( dto.getId() );
         if ( dto.getTitle() != null ) {
             entity.setTitle( dto.getTitle() );
         }
@@ -93,9 +88,6 @@ public class Board2MapperImpl implements Board2Mapper {
         }
         if ( dto.getCreateDT() != null ) {
             entity.setCreateDT( dto.getCreateDT() );
-        }
-        if ( dto.getAsd() != null ) {
-            entity.setAsd( dto.getAsd() );
         }
     }
 }

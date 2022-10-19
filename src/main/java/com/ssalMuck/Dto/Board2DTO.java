@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 @Builder
 public class Board2DTO {
-    //@ApiParam(value="아이디", hidden = true)
-    private int id;
+    /*@ApiParam(value="아이디", hidden = true)
+    private int id;*/
 
     @ApiParam(value="제목")
     private String title;
@@ -16,7 +16,6 @@ public class Board2DTO {
     private String username;
     @ApiParam(value="생성일시")
     private String createDT;
-    private String asd;
 
 
 

@@ -18,6 +18,5 @@ public class Board2 {
     private String title;
     private String username;
     private String createDT;
-    private String asd;
 
 }
