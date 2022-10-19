@@ -34,6 +34,7 @@ public class board2Controller {
     @PostMapping("/board2")
     public ResponseEntity insert (@ModelAttribute Board2DTO board2DTO){
 
+        System.out.println("feat_test1");
 
         board2Service.insert(board2DTO);
 
