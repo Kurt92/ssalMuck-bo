@@ -35,6 +35,8 @@ public class board2Controller {
     public ResponseEntity insert (@ModelAttribute Board2DTO board2DTO){
 
         System.out.println("feat_test1");
+        System.out.println("fix_test2");
+
 
         board2Service.insert(board2DTO);
 
