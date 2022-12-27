@@ -12,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 //기본 생성자 생성
 //접근권한 protected 로 설정하여 아무데서나 객체를 생성하는것을 막는다
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+//@NoArgsConstructor(access = AccessLevel.PROTECTED)
 //빌더의 메소드면 지정
 /*@Builder(builderMethodName = "MemberBuilder")*/
 @Builder

@@ -1,7 +1,10 @@
 package com.ssalMuck.Controller;
 
 import com.ssalMuck.Dto.Board2DTO;
+import com.ssalMuck.Dto.MemberDTO;
+import com.ssalMuck.Dto.testDTO;
 import com.ssalMuck.Entity.Board2;
+import com.ssalMuck.Entity.Member;
 import com.ssalMuck.Repository.Board2Repository;
 import com.ssalMuck.service.Board2Service;
 import io.swagger.annotations.ApiOperation;
@@ -28,6 +31,8 @@ public class board2Controller {
         List<Board2DTO> findAll = board2Service.find();
 
         return new ResponseEntity<>(findAll, HttpStatus.OK);
+
+
     }
 
     @ApiOperation(value="게시판", notes="게시판 글쓰기")
@@ -39,6 +44,7 @@ public class board2Controller {
 
 
         board2Service.insert(board2DTO);
+
 
 
         return new ResponseEntity<>(HttpStatus.OK);
