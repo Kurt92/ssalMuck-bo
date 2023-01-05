@@ -34,6 +34,11 @@ public class Board2Service {
         return board2Mapper.toDtoList(findAll);
     }
 
+    public List<Board2DTO> findOne(int id){
+        List<Board2> findOne = board2Repository.findOne(id);
+        return board2Mapper.toDtoList(findOne);
+    }
+
     @Transactional
     public void insert(Board2DTO board2DTO){
 

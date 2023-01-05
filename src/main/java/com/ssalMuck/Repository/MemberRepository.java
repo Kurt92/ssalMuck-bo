@@ -1,7 +1,8 @@
-/*package com.ssalMuck.Repository;
+package com.ssalMuck.Repository;
 
 import com.ssalMuck.Entity.Member;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -10,23 +11,22 @@ import java.util.List;
 
 //@Repository = 컴포넌트 스캔을 해서 spring bean 으로 자동 등록
 @Repository
-//@RequiredArgsConstructor = 생성자로 AutoWired lombok
-@RequiredArgsConstructor
+@RequiredArgsConstructor    //@RequiredArgsConstructor = 생성자로 AutoWired lombok
 public class MemberRepository {
 
     //@PersistenceContext = 스프링이 엔티티 매니저를 주입해줌
-@PersistenceContext
-    private EntityManager em;
+    /*@PersistenceContext
+    private EntityManager em;*/
 
 
-    //@RequiredArgsConstructor  => spring data jpa가 autoWired를 지원해줌
+    //@Autowired => spring data jpa가 autoWired를 지원해줌
     private final EntityManager em;
 
     public void save(Member member) {
         em.persist(member);
-    }*/
+    }
 
-   /* public Member findOne(String id) {
+    public Member findOne(String id) {
         return em.find(Member.class, id);
     }
 
@@ -41,5 +41,4 @@ public class MemberRepository {
                 .setParameter("name",name)
                 .getResultList();
     }
-*/
-        /*}*/
+}

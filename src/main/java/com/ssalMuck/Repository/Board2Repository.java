@@ -25,4 +25,9 @@ public class Board2Repository {
                 .getResultList(); // 리스트 가져오는법
     }
 
+    public List<Board2> findOne(int id) {
+        return em.createQuery("select b from Board2 b where b.id = :id", Board2.class)
+                .setParameter("id",id)
+                .getResultList(); // 리스트 가져오는법
+    }
 }

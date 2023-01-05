@@ -8,8 +8,7 @@ import lombok.*;
 
 
 @Data
-//해당 클레스 필드에 모든 생성자 생성
-@AllArgsConstructor
+@AllArgsConstructor //해당 클레스 필드에 모든 생성자 생성
 //기본 생성자 생성
 //접근권한 protected 로 설정하여 아무데서나 객체를 생성하는것을 막는다
 //@NoArgsConstructor(access = AccessLevel.PROTECTED)

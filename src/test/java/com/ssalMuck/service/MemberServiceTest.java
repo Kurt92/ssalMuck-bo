@@ -1,8 +1,8 @@
 package com.ssalMuck.service;
 
 import com.ssalMuck.Entity.Member;
-/*import com.ssalMuck.Repository.MemberRepository;*/
-import com.ssalMuck.MemberRepository;
+import com.ssalMuck.Repository.MemberRepository;
+/*import com.ssalMuck.MemberRepository;*/
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
