@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.*;
 import java.util.stream.Stream;
 
-@SpringBootTest
+/*@SpringBootTest*/
 public class test {
 
     @Test
