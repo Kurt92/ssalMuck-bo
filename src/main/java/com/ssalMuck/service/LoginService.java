@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class LoginService {
 
     private final LoginRepository loginRepository;
-
     private final LoginMapper loginMapper;
 
     //생성자 의존주입

@@ -1,3 +1,4 @@
+/*
 package com.ssalMuck;
 
 import com.ssalMuck.Entity.Member;
@@ -12,10 +13,12 @@ public class MemberRepository {
     @PersistenceContext
     private EntityManager em;
 
-    /*public Long save(Member member){
+    */
+/*public Long save(Member member){
         em.persist(member);
         return member.getId();
-    }*/
+    }*//*
+
 
     public Member save(String id) {
         return null;
@@ -25,3 +28,4 @@ public class MemberRepository {
         return em.find(Member.class, id);
     }
 }
+*/

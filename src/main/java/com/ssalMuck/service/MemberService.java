@@ -1,8 +1,8 @@
 package com.ssalMuck.service;
 
 import com.ssalMuck.Entity.Member;
-/*import com.ssalMuck.Repository.MemberRepository;*/
-import com.ssalMuck.MemberRepository;
+import com.ssalMuck.Repository.MemberRepository;
+/*import com.ssalMuck.MemberRepository;*/
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-@RequiredArgsConstructor
+@RequiredArgsConstructor  //final이 붙어있는 필드만 생성자 생성
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -25,7 +25,7 @@ public class MemberService {
     public String join(Member member) {
         //벨리데이션
         validateDuplicateMember(member);  //중복 회원 검증
-        /*memberRepository.save(member);*/
+        memberRepository.save(member);
         return member.getId();
     }
 
@@ -34,23 +34,23 @@ public class MemberService {
      * */
     private void validateDuplicateMember(Member member) {
         //EXCEPTION
-        /*List<Member> findMembers = memberRepository.findByName(member.getName());
+        List<Member> findMembers = memberRepository.findByName(member.getName());
         if(!findMembers.isEmpty()){
             throw new IllegalStateException("이미 있어용!");
-        }*/
+        }
     }
 
     /**
      * 회원전체조회
      * */
-    /*public List<Member> findMembers() {
+    public List<Member> findMembers() {
         return memberRepository.findAll();
-    }*/
+    }
     /**
      * 회 원전체조회
      * */
-   /* public Member member(String memberId) {
+    public Member member(String memberId) {
         return memberRepository.findOne(memberId);
-    }*/
+    }
 
 }
