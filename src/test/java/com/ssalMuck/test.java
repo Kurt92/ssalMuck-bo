@@ -17,5 +17,6 @@ public class test {
         System.out.println("jenkins TEST");
         System.out.println("jenkins TEST2");
 
+        System.out.println("jenkins TEST4");
     }
 }
