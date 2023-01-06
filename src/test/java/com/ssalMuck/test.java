@@ -20,5 +20,6 @@ public class test {
         System.out.println("jenkins TEST4");
         System.out.println("jenkins TEST5 port open");
         system.out.println("aa");
+                system.out.println("aa");
     }
 }
