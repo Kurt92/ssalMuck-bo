@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-12-28T15:07:12+0900",
+    date = "2023-01-20T18:02:31+0900",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_292 (AdoptOpenJDK)"
 )
 @Component
@@ -26,7 +26,6 @@ public class Board2MapperImpl implements Board2Mapper {
 
         board2DTO.title( e.getTitle() );
         board2DTO.username( e.getUsername() );
-        board2DTO.createDT( e.getCreateDT() );
 
         return board2DTO.build();
     }
@@ -41,7 +40,6 @@ public class Board2MapperImpl implements Board2Mapper {
 
         board2.setTitle( d.getTitle() );
         board2.setUsername( d.getUsername() );
-        board2.setCreateDT( d.getCreateDT() );
 
         return board2;
     }
@@ -85,9 +83,6 @@ public class Board2MapperImpl implements Board2Mapper {
         }
         if ( dto.getUsername() != null ) {
             entity.setUsername( dto.getUsername() );
-        }
-        if ( dto.getCreateDT() != null ) {
-            entity.setCreateDT( dto.getCreateDT() );
         }
     }
 }

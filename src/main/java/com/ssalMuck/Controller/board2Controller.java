@@ -5,11 +5,13 @@ import com.ssalMuck.service.Board2Service;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -21,9 +23,10 @@ public class board2Controller {
 
     @ApiOperation(value="게시판", notes="게시판 전체조회")
     @GetMapping("/board2")
-    public ResponseEntity board2 (){
+    public ResponseEntity board2 (final Pageable pageable){
 
-        List<Board2DTO> findAll = board2Service.find();
+        System.out.println(pageable);
+        List<Board2DTO> findAll = board2Service.find(pageable);
 
         return new ResponseEntity<>(findAll, HttpStatus.OK);
     }
@@ -41,15 +44,9 @@ public class board2Controller {
 
     @ApiOperation(value="게시판", notes="게시판 글쓰기")
     @PostMapping("/board2")
-    public ResponseEntity insert (@RequestBody Board2DTO board2DTO){
-
-        System.out.println("feat_test1");
-        System.out.println("fix_test2");
-
+    public ResponseEntity insert (@RequestBody final Board2DTO board2DTO){
 
         board2Service.insert(board2DTO);
-
-
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
