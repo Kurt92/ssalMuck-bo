@@ -11,15 +11,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Board2DTO {
-    /*@ApiParam(value="아이디", hidden = true)
-    private int id;*/
-
+    @ApiParam(value="아이디", hidden = true)
+    private int id;
     @ApiParam(value="제목")
     private String title;
     @ApiParam(value="유저이름")
     private String username;
     @ApiParam(value="생성일시")
-    private LocalDateTime createDT;
+    private String createdDate;
 
 
 

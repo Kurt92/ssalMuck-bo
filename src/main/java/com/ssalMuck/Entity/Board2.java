@@ -8,11 +8,12 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 @Getter
-@Setter
+
 public class Board2 extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

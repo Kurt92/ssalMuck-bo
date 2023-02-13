@@ -24,7 +24,7 @@ public class Board2Repository {
     public List<Board2> findAll(Pageable pageable){
         return em.createQuery("select b from Board2 b", Board2.class)
                 .setFirstResult(pageable.getPageNumber()* pageable.getPageSize()) // 페이징
-                .setMaxResults(pageable.getPageSize()) // 페이징
+                .setMaxResults(pageable.getPageNumber()* pageable.getPageSize()+ pageable.getPageSize()) // 페이징
                 .getResultList(); // 리스트 가져오는법
     }
 

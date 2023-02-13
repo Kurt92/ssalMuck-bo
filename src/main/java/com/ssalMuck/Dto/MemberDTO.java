@@ -27,6 +27,10 @@ public class MemberDTO {
 
     private Address address;
 
+    public MemberDTO() {
+
+    }
+
 
     /*@Builder(builderMethodName = "MemberBuilder")
     public MemberDTO (String id){
