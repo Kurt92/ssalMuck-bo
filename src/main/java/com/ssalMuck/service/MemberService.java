@@ -24,7 +24,7 @@ public class MemberService {
         //벨리데이션
         validateDuplicateMember(member);  //중복 회원 검증
         memberRepository.save(member);
-        return member.getId();
+        return member.getUser_id();
     }
 
     /**

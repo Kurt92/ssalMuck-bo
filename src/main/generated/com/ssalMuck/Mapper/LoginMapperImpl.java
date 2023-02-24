@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-02-03T16:41:50+0900",
+    date = "2023-02-17T18:10:30+0900",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_292 (AdoptOpenJDK)"
 )
 @Component
@@ -24,7 +24,7 @@ public class LoginMapperImpl implements LoginMapper {
 
         MemberDTOBuilder memberDTO = MemberDTO.builder();
 
-        memberDTO.id( e.getId() );
+        memberDTO.user_id( e.getUser_id() );
         memberDTO.password( e.getPassword() );
         memberDTO.name( e.getName() );
         memberDTO.address( e.getAddress() );
@@ -40,7 +40,7 @@ public class LoginMapperImpl implements LoginMapper {
 
         Member member = new Member();
 
-        member.setId( d.getId() );
+        member.setUser_id( d.getUser_id() );
         member.setPassword( d.getPassword() );
         member.setName( d.getName() );
         member.setAddress( d.getAddress() );
@@ -82,8 +82,8 @@ public class LoginMapperImpl implements LoginMapper {
             return;
         }
 
-        if ( dto.getId() != null ) {
-            entity.setId( dto.getId() );
+        if ( dto.getUser_id() != null ) {
+            entity.setUser_id( dto.getUser_id() );
         }
         if ( dto.getPassword() != null ) {
             entity.setPassword( dto.getPassword() );

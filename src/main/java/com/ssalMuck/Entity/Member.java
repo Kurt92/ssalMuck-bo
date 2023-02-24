@@ -16,7 +16,7 @@ public class Member{
 
     @Id
     @Column(name = "user_id")
-    private String id;
+    private String user_id;
 
     private String password;
 

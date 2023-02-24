@@ -5,7 +5,6 @@ import com.ssalMuck.service.LoginService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +17,7 @@ import java.util.*;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-public class loginController {
+public class LoginController {
 
 
     private final LoginService loginService;
@@ -26,12 +25,12 @@ public class loginController {
 
     @ApiOperation(value="로그인", notes="유저를 조회한다")
     @Transactional
-    @GetMapping("/login.do")
+    @PostMapping("/login")
     public ResponseEntity login(@ModelAttribute MemberDTO memberDto, HttpSession session){
 
         memberDto = loginService.login(memberDto);
 
-        session.setAttribute("id",memberDto.getId());
+        session.setAttribute("id",memberDto.getUser_id());
         session.setAttribute("name",memberDto.getName());
 
         Map<String,Object> resultMap = new HashMap<String,Object>();
@@ -39,7 +38,7 @@ public class loginController {
         return new ResponseEntity<>(resultMap, HttpStatus.OK);
     }
 
-    @GetMapping("/logout.do")
+    @GetMapping("/logout")
     public ResponseEntity logout(HttpSession session){
         log.info("session check : "+session.getId());
         //세션에 들어있는 값 제거

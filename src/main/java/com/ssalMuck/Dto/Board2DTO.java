@@ -21,5 +21,4 @@ public class Board2DTO {
     private String createdDate;
 
 
-
 }
