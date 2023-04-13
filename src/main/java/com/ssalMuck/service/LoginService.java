@@ -3,11 +3,15 @@ package com.ssalMuck.service;
 import com.ssalMuck.Dto.MemberDTO;
 import com.ssalMuck.Entity.Member;
 import com.ssalMuck.Mapper.LoginMapper;
+import com.ssalMuck.Repository.IBoard2Repository;
+import com.ssalMuck.Repository.ILoginRepository;
 import com.ssalMuck.Repository.LoginRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityNotFoundException;
 
 @Service
 @Slf4j
@@ -16,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class LoginService {
 
     private final LoginRepository loginRepository;
+    private final ILoginRepository iLoginRepository;
     private final LoginMapper loginMapper;
 
     //생성자 의존주입
@@ -40,7 +45,8 @@ public class LoginService {
         //엔티티로 변환
         Member member = loginMapper.toEntity(memberDTO);
         //조회
-        member = loginRepository.find(member);
+        member = iLoginRepository.getById(member.getUser_id());
+
         //DTO 변환
         memberDTO = loginMapper.toDto(member);
 

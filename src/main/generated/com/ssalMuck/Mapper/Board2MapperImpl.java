@@ -3,6 +3,7 @@ package com.ssalMuck.Mapper;
 import com.ssalMuck.Dto.Board2DTO;
 import com.ssalMuck.Dto.Board2DTO.Board2DTOBuilder;
 import com.ssalMuck.Entity.Board2;
+import com.ssalMuck.Entity.Board2.Board2Builder;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-02-17T18:10:30+0900",
+    date = "2023-04-12T16:07:37+0900",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 1.8.0_292 (AdoptOpenJDK)"
 )
 @Component
@@ -24,10 +25,16 @@ public class Board2MapperImpl implements Board2Mapper {
 
         Board2DTOBuilder board2DTO = Board2DTO.builder();
 
-        board2DTO.id( e.getId() );
+        if ( e.getId() != null ) {
+            board2DTO.id( String.valueOf( e.getId() ) );
+        }
         board2DTO.title( e.getTitle() );
+        board2DTO.content( e.getContent() );
         board2DTO.username( e.getUsername() );
-        board2DTO.createdDate( e.getCreatedDate() );
+        board2DTO.hit( e.getHit() );
+        board2DTO.likeHit( e.getLikeHit() );
+        board2DTO.dislike( e.getDislike() );
+        board2DTO.delete_yn( e.getDelete_yn() );
 
         return board2DTO.build();
     }
@@ -38,9 +45,20 @@ public class Board2MapperImpl implements Board2Mapper {
             return null;
         }
 
-        Board2 board2 = new Board2();
+        Board2Builder board2 = Board2.builder();
 
-        return board2;
+        if ( d.getId() != null ) {
+            board2.id( Long.parseLong( d.getId() ) );
+        }
+        board2.title( d.getTitle() );
+        board2.content( d.getContent() );
+        board2.username( d.getUsername() );
+        board2.hit( d.getHit() );
+        board2.likeHit( d.getLikeHit() );
+        board2.dislike( d.getDislike() );
+        board2.delete_yn( d.getDelete_yn() );
+
+        return board2.build();
     }
 
     @Override
@@ -75,6 +93,31 @@ public class Board2MapperImpl implements Board2Mapper {
     public void updateFromDto(Board2DTO dto, Board2 entity) {
         if ( dto == null ) {
             return;
+        }
+
+        if ( dto.getId() != null ) {
+            entity.setId( Long.parseLong( dto.getId() ) );
+        }
+        if ( dto.getTitle() != null ) {
+            entity.setTitle( dto.getTitle() );
+        }
+        if ( dto.getContent() != null ) {
+            entity.setContent( dto.getContent() );
+        }
+        if ( dto.getUsername() != null ) {
+            entity.setUsername( dto.getUsername() );
+        }
+        if ( dto.getHit() != null ) {
+            entity.setHit( dto.getHit() );
+        }
+        if ( dto.getLikeHit() != null ) {
+            entity.setLikeHit( dto.getLikeHit() );
+        }
+        if ( dto.getDislike() != null ) {
+            entity.setDislike( dto.getDislike() );
+        }
+        if ( dto.getDelete_yn() != null ) {
+            entity.setDelete_yn( dto.getDelete_yn() );
         }
     }
 }

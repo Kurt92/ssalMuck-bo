@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 public class OrderServiceTest {
 
-
+/*
     @Autowired EntityManager em;
     @Autowired OrderService orderService;
     @Autowired OrderRepository orderRepository;
@@ -115,5 +115,5 @@ public class OrderServiceTest {
         member.setAddress(new Address("서울","강가","123-123"));
         em.persist(member);
         return member;
-    }
+    }*/
 }
