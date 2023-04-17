@@ -2,6 +2,10 @@ package com.ssalMuck.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -37,5 +41,20 @@ public class SwaggerConfig {
                 .build()
                 ;
     }
-    ////////
+
+
+    @Bean    //스웨거 아이디 셋팅
+    public UserDetailsService userDetailsService() {
+        //인메모리에 username, password, role 설정
+        UserDetails user =
+                User.withDefaultPasswordEncoder()
+                        .username("kurt")
+                        .password("1234")
+                        .roles("ADMIN")
+                        .build();
+
+        System.out.println("password : " + user.getPassword());
+
+        return new InMemoryUserDetailsManager(user);
+    }
 }
