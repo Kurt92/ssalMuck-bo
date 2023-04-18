@@ -6,6 +6,7 @@ import com.ssalMuck.cmmn.cookie.CookieUtil;
 import com.ssalMuck.cmmn.jwt.JwtUtil;
 import com.ssalMuck.cmmn.redis.RedisUtil;
 import io.jsonwebtoken.ExpiredJwtException;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,19 +25,15 @@ import java.io.IOException;
 
 @Slf4j
 @Component
+@AllArgsConstructor
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-    @Autowired
     private UserInfoService userInfoService;
 
-
-    @Autowired
     private JwtUtil jwtUtil;
 
-    @Autowired
     private CookieUtil cookieUtil;
 
-    @Autowired
     private RedisUtil redisUtil;
 
     @Override

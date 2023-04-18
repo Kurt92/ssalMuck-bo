@@ -28,4 +28,5 @@ public class Board2DTO {
     @ApiParam(value="삭제여부")
     private String delete_yn;
 
+    private MemberDTO memberDTO;
 }

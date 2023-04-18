@@ -32,7 +32,7 @@ public class MemberService {
      * */
     private void validateDuplicateMember(Member member) {
         //EXCEPTION
-        List<Member> findMembers = memberRepository.findByName(member.getName());
+        List<Member> findMembers = memberRepository.findByName(member.getUsername());
         if(!findMembers.isEmpty()){
             throw new IllegalStateException("이미 있어용!");
         }

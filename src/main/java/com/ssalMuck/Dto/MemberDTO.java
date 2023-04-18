@@ -17,15 +17,19 @@ import lombok.*;
 @Builder
 public class MemberDTO {
 
-    @ApiParam(value="아이디", required=true, example="chcch123")
+    /*@ApiParam(value="아이디", required=true, example="chcch123")*/
     private String user_id;
 
-    @ApiParam(value="비밀번호")
+    /*@ApiParam(value="비밀번호")*/
     private String password;
 
     private String name;
 
     private Address address;
+
+    public MemberDTO() {
+
+    }
 
 
 

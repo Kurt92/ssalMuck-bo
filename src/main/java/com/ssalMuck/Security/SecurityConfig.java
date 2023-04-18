@@ -26,7 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/webjars/**",
             /* swagger v3 */
             "/v3/api-docs/**",
-            "/swagger-ui/**"
+            "/swagger-ui/**",
+            "/**"
 
     };
 
@@ -45,6 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable() // swagger API 호출시 403 에러 발생 방지
                 .formLogin().disable()
-                .httpBasic();
+                //.httpBasic();
+                ;
+
+
     }
 }
