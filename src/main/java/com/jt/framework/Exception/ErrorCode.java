@@ -39,7 +39,7 @@ public enum ErrorCode {
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "사용자 정보를 찾을 수 없습니다"),
 
     //Login
-    LOGIN_VAILD(HttpStatus.UNAUTHORIZED, "아이디가 너무 짧을지도?"),
+    LOGIN_VAILD(HttpStatus.UNAUTHORIZED, "로그인 오류"),
 
 
 
