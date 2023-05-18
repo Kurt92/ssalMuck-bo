@@ -24,11 +24,11 @@ public class MemberDTO {
 
     @ApiParam(value="아이디", required=true, example="chcch123")
     @NotBlank(message = "아이디가 짧을지도?")
-    private String user_id;
+    private String userId;
 
     @ApiParam(value="비밀번호")
     @NotBlank
-    @Size(min = 6, max = 20, message = "비번이가 짧을지도?")
+    @Size(min = 1, max = 20, message = "비번이가 짧을지도?")
     private String password;
 
     private String username;

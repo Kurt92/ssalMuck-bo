@@ -30,7 +30,7 @@ public class LoginService {
         //엔티티로 변환
         Member member = loginMapper.toEntity(memberDto);
         //조회
-        member = iLoginRepository.findById(member.getUser_id())
+        member = iLoginRepository.findByUserIdAndPassword(member.getUserId(), member.getPassword())
                 .orElseThrow(()->new NullPointerException("잉? 이아이디 없음!"));
         //DTO 변환
         memberDto = loginMapper.toDto(member);
@@ -51,7 +51,7 @@ public class LoginService {
     @Transactional
     public void idCheck(Member member) throws Exception{
 
-        iLoginRepository.findById(member.getUser_id())
+        iLoginRepository.findById(member.getUserId())
                 .ifPresent( e -> {throw new RuntimeException("이미 있는 아이디임!");});
 
 

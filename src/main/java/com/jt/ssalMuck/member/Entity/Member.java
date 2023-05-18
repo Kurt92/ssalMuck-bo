@@ -17,7 +17,7 @@ public class Member{
     @Column(name = "user_id")
     @Comment("asd")
     @ApiParam(value="아이디")
-    private String user_id;
+    private String userId;
 
     @ApiParam(value="비밀번호")
     private String password;

@@ -15,7 +15,7 @@ public class LoginRepository {
     private EntityManager em;
 
     public Member find(Member member) {
-        return em.find(Member.class, member.getUser_id());
+        return em.find(Member.class, member.getUserId());
     }
 
     public void save(Member member) {

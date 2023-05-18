@@ -49,7 +49,7 @@ public class LoginController {
         log.info("accessToken"+accessToken);
         log.info("refreshToken"+refreshToken);
 
-        redisUtil.setDataExpire(refreshJwt, memberDto.getUser_id(), JwtUtil.REFRESH_TOKEN_VALIDATION_SECOND);
+        redisUtil.setDataExpire(refreshJwt, memberDto.getUserId(), JwtUtil.REFRESH_TOKEN_VALIDATION_SECOND);
         redisUtil.getData(token);
 
         res.addCookie(accessToken);
@@ -57,7 +57,7 @@ public class LoginController {
 
 
         Map<String,Object> resultMap = new HashMap<String,Object>();
-        resultMap.put("list", memberDto);
+        resultMap.put("user", memberDto);
         resultMap.put("JWT", accessToken);
         return new ResponseEntity<>(resultMap, HttpStatus.OK);
     }
