@@ -1,4 +1,4 @@
-package com.jt.framework.config;
+package com.jt.framework.config.queryDsl;
 
 import com.p6spy.engine.spy.P6SpyOptions;
 import org.springframework.context.annotation.Configuration;
