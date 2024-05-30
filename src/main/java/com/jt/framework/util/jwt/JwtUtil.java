@@ -1,6 +1,6 @@
 package com.jt.framework.util.jwt;
 
-import com.jt.ssalMuck.member.Model.MemberDTO;
+import com.jt.ssalMuck.ctgy.member.dto.MemberDTO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;

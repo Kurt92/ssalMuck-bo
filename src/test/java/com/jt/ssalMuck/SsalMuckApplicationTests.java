@@ -8,6 +8,7 @@ class SsalMuckApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

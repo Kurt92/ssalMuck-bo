@@ -1,5 +1,6 @@
 package com.jt.framework.util.TimeUtil;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

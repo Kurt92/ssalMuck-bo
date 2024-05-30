@@ -2,8 +2,8 @@ package com.jt.ssalMuck.board.Mapper;
 
 import com.jt.ssalMuck.board.Entity.Board2;
 import com.jt.ssalMuck.board.Entity.Board2.Board2Builder;
-import com.jt.ssalMuck.board.Model.Board2DTO;
-import com.jt.ssalMuck.board.Model.Board2DTO.Board2DTOBuilder;
+import com.jt.ssalMuck.board.Dto.Board2DTO;
+import com.jt.ssalMuck.board.Dto.Board2DTO.Board2DTOBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;

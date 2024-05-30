@@ -1,7 +1,7 @@
 package com.jt.framework.Security.service;
 
 import com.jt.framework.Security.repository.IUserInfoRepository;
-import com.jt.ssalMuck.member.Entity.Member;
+import com.jt.ssalMuck.domain.member.Member;
 import com.jt.framework.Security.model.SecurityMember;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

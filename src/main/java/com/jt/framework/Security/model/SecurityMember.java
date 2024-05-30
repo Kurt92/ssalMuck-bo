@@ -1,6 +1,6 @@
 package com.jt.framework.Security.model;
 
-import com.jt.ssalMuck.member.Entity.Member;
+import com.jt.ssalMuck.domain.member.Member;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 

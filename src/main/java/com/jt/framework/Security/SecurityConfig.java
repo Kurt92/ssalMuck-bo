@@ -1,6 +1,7 @@
 package com.jt.framework.Security;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -32,14 +33,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     };
 
     /**
-     * configure
+     * configure - HttpSecurity
      * @param http
      * @throws Exception
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-
                 .authorizeRequests()
                 .antMatchers(PERMIT_SWAGGER_URL_ARRAY).permitAll()
                 .anyRequest().authenticated()
@@ -50,5 +50,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 ;
 
 
+    }
+    /**
+     * configure - WebSecurity
+     * @param web
+     * @throws Exception
+     */
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring()
+                .mvcMatchers("/node_modules/**")
+                .requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
 }
